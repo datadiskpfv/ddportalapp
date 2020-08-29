@@ -17,13 +17,13 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) {}
 
-  public login(user: User): Observable<HttpResponse<any> | HttpErrorResponse> {
-    return this.http.post<HttpResponse<any> | HttpErrorResponse>
-      ('${this.host/user/login}', user, {observe: 'response'});   // response means get whole response including headers, body, etc
+  public login(user: User): Observable<HttpResponse<User>> {
+    // tslint:disable-next-line:max-line-length
+    return this.http.post<User>(`${this.host}/user/login`, user, {observe: 'response'});   // response means get whole response including headers, body, etc
   }
 
-  public register(user: User): Observable<User | HttpErrorResponse> {
-    return this.http.post<User| HttpErrorResponse>
+  public register(user: User): Observable<User> {
+    return this.http.post<User>
     ('${this.host/user/register}', user);
   }
 
