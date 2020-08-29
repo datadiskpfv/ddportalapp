@@ -57,7 +57,7 @@ export class AuthenticationService {
     return JSON.parse(localStorage.getItem('user'));
   }
 
-  public isLoggedIn(): boolean {
+  public isUserLoggedIn(): boolean {
     this.loadToken();
 
     if (this.token != null && this.token !== '' ){
