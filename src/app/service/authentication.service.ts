@@ -27,7 +27,7 @@ export class AuthenticationService {
     (`${this.host}/user/register`, user);
   }
 
-  public logout(): void {
+  public logOut(): void {
     this.token = null;
     this.loggedInUsername = null;
 
@@ -68,7 +68,7 @@ export class AuthenticationService {
         }
       }
     } else {
-       this.logout();
+       this.logOut();
        return false;
     }
   }

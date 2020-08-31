@@ -23,9 +23,9 @@ export class AuthInterceptor implements HttpInterceptor {
       return httpHandler.handle(httpRequest);
     }
 
-    if (httpRequest.url.includes(`${this.authenticationService.host}/user/reset-password`)) {
-      return httpHandler.handle(httpRequest);
-    }
+    // if (httpRequest.url.includes(`${this.authenticationService.host}/user/reset-password`)) {
+    //   return httpHandler.handle(httpRequest);
+    // }
 
     // all other URL's we will add the authorization header and the JWT token
     this.authenticationService.loadToken();
